@@ -53,10 +53,11 @@ def makeYqlQuery(req):
     city = parameters.get("geo-city")
     print("city: ")
     print(city)
+    print(parameters.get("geo-village"))
     if city is None:
         city = parameters.get("geo-village")
-    print("city2: ")
-    print(city)
+        print("city2: ")
+        print(city)
     if city is None:
         return None
 
