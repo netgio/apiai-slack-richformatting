@@ -54,11 +54,11 @@ def makeYqlQuery(req):
     print("city: ")
     print(city)
     print(parameters.get("geo-village"))
-    if city is None:
+    if not city:
         city = parameters.get("geo-village")
-        print("city2: ")
-        print(city)
-    if city is None:
+    print("city2: ")
+    print(city)
+    if not city:
         return None
 
     return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
